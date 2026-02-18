@@ -192,7 +192,7 @@
             <h2 class="text-4xl font-bold mb-4" data-es="¿Listo para innovar?" data-en="Ready to innovate?">¿Listo para innovar?</h2>
             <p class="text-gray-400 mb-12" data-es="Cuéntame sobre tu proyecto y asegura tu beneficio de lanzamiento." data-en="Tell me about your project and secure your launch benefit.">Cuéntame sobre tu proyecto y asegura tu beneficio de lanzamiento.</p>
             
-            <form id="contactForm" class="text-left space-y-6">
+            <form id="contactForm" action="https://formspree.io/f/xjgeoevd" method="POST" class="text-left space-y-6">
                 <div class="grid md:grid-cols-2 gap-6">
                     <div>
                         <label class="block text-sm font-semibold mb-2 text-gray-300" data-es="Nombre Completo" data-en="Full Name">Nombre Completo</label>
@@ -240,7 +240,6 @@
         }
 
         document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
             const msg = document.documentElement.lang === 'es' ? '¡Gracias! Te contactaré pronto para aplicar tu descuento.' : 'Thank you! I will contact you soon to apply your discount.';
             alert(msg);
         });
