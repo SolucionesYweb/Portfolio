@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>David Arbelaez | Soluciones de IA y Full-Stack</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #60a5fa, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-bg {
+            background: radial-gradient(circle at top right, #1e3a8a, #0f172a);
+        }
+    </style>
+</head>
+<body class="bg-[#0f172a] text-gray-200">
+
+    <!-- Navegación -->
+    <nav class="fixed w-full z-50 glass-effect py-4">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <div class="text-2xl font-bold gradient-text">DA.</div>
+            <div class="hidden md:flex space-x-8 text-sm uppercase tracking-widest font-semibold">
+                <a href="#about" class="hover:text-blue-400 transition" data-en="About" data-es="Sobre Mí">Sobre Mí</a>
+                <a href="#services" class="hover:text-blue-400 transition" data-en="Services" data-es="Servicios">Servicios</a>
+                <a href="#offer" class="text-yellow-400 hover:text-yellow-300 transition" data-en="Special Offer" data-es="Oferta Especial">Oferta Especial</a>
+                <a href="#contact" class="hover:text-blue-400 transition" data-en="Contact" data-es="Contacto">Contacto</a>
+            </div>
+            <div class="flex items-center space-x-2 border border-gray-600 px-3 py-1 rounded-full text-xs cursor-pointer">
+                <button onclick="changeLang('es')" id="btn-es" class="font-bold">ES</button>
+                <span class="text-gray-600">|</span>
+                <button onclick="changeLang('en')" id="btn-en" class="text-gray-500">EN</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-bg min-h-screen flex items-center pt-20">
+        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-blue-400 font-semibold mb-2 uppercase tracking-widest" id="hero-subtitle" data-es="Ingeniero Senior Full-Stack" data-en="Senior Full-Stack Engineer">
+                    Ingeniero Senior Full-Stack
+                </h2>
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight" id="hero-title" data-es="Potencia tu negocio con Agentes de IA" data-en="Power your business with AI Agents">
+                    Potencia tu negocio con <span class="gradient-text">Agentes de IA</span>
+                </h1>
+                <p class="text-lg text-gray-400 mb-8 max-w-lg leading-relaxed" id="hero-desc" data-es="Escale su empresa con Chatbots inteligentes, aplicaciones móviles y web conectadas directamente a sus bases de datos. Más de 8 años de experiencia en AWS y arquitecturas escalables." data-en="Scale your company with intelligent Chatbots, mobile and web apps connected directly to your databases. 8+ years of experience in AWS and scalable architectures.">
+                    Escale su empresa con Chatbots inteligentes, aplicaciones móviles y web conectadas directamente a sus bases de datos. Más de 8 años de experiencia en AWS y arquitecturas escalables.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-bold text-center transition" id="hero-cta-1" data-es="Iniciar Proyecto" data-en="Start Project">
+                        Iniciar Proyecto
+                    </a>
+                    <a href="#services" class="border border-gray-600 hover:bg-gray-800 text-white px-8 py-4 rounded-lg font-bold text-center transition" id="hero-cta-2" data-es="Ver Soluciones" data-en="View Solutions">
+                        Ver Soluciones
+                    </a>
+                </div>
+            </div>
+            <div class="relative hidden md:block">
+                <div class="absolute -inset-4 bg-blue-500/20 blur-3xl rounded-full"></div>
+                <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800" alt="Concepto de IA" class="rounded-2xl shadow-2xl relative z-10 border border-white/10">
+            </div>
+        </div>
+    </header>
+
+    <!-- Banner de Oferta -->
+    <section id="offer" class="bg-gradient-to-r from-blue-900 to-purple-900 py-12 border-y border-white/10">
+        <div class="container mx-auto px-6 text-center">
+            <div class="inline-block bg-yellow-400 text-black px-4 py-1 rounded-full text-sm font-bold mb-4 uppercase" id="promo-badge" data-es="Oferta de Lanzamiento" data-en="Launch Offer">
+                Oferta de Lanzamiento
+            </div>
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-2" id="promo-title" data-es="30% DE DESCUENTO en tu primer proyecto" data-en="30% OFF on your first project">
+                30% DE DESCUENTO en tu primer proyecto
+            </h2>
+            <p class="text-blue-100 text-lg opacity-80" id="promo-desc" data-es="Obtén un beneficio exclusivo por tiempo limitado en nuestro lanzamiento oficial." data-en="Get an exclusive limited-time benefit on our official launch.">
+                Obtén un beneficio exclusivo por tiempo limitado en nuestro lanzamiento oficial.
+            </p>
+        </div>
+    </section>
+
+    <!-- Servicios -->
+    <section id="services" class="py-24 bg-[#0a0f1d]">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h3 class="text-blue-400 font-bold mb-2 uppercase" data-es="Lo que construyo" data-en="What I build">Lo que construyo</h3>
+                <h2 class="text-4xl font-bold" data-es="Soluciones para PyMEs Modernas" data-en="Solutions for Modern SMBs">Soluciones para PyMEs Modernas</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Chatbots -->
+                <div class="glass-effect p-8 rounded-2xl hover:border-blue-500/50 transition group">
+                    <div class="w-14 h-14 bg-blue-500/10 rounded-lg flex items-center justify-center mb-6 text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition">
+                        <i class="fas fa-robot text-2xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-4" data-es="Chatbots Inteligentes" data-en="Intelligent Chatbots">Chatbots Inteligentes</h4>
+                    <p class="text-gray-400 mb-4" data-es="Asistentes virtuales avanzados con memoria y acceso a tus datos internos para soporte y ventas." data-en="Advanced virtual assistants with memory and access to your internal data for support and sales.">Asistentes virtuales avanzados con memoria y acceso a tus datos internos para soporte y ventas.</p>
+                    <ul class="text-sm space-y-2 text-gray-500">
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i> OpenAI & Gemini</li>
+                        <li data-es="Bases de Datos Vectoriales" data-en="Vector Databases">Bases de Datos Vectoriales</li>
+                        <li data-es="Integración RAG" data-en="RAG Integration">Integración RAG</li>
+                    </ul>
+                </div>
+
+                <!-- Web/App -->
+                <div class="glass-effect p-8 rounded-2xl hover:border-purple-500/50 transition group">
+                    <div class="w-14 h-14 bg-purple-500/10 rounded-lg flex items-center justify-center mb-6 text-purple-400 group-hover:bg-purple-500 group-hover:text-white transition">
+                        <i class="fas fa-mobile-alt text-2xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-4" data-es="Web y Mobile" data-en="Web & Mobile">Web y Mobile</h4>
+                    <p class="text-gray-400 mb-4" data-es="Aplicaciones a medida que conectan tu negocio con tus clientes en cualquier dispositivo." data-en="Custom applications that connect your business with your customers on any device.">Aplicaciones a medida que conectan tu negocio con tus clientes en cualquier dispositivo.</p>
+                    <ul class="text-sm space-y-2 text-gray-500">
+                        <li><i class="fas fa-check text-purple-500 mr-2"></i> React & Next.js</li>
+                        <li><i class="fas fa-check text-purple-500 mr-2"></i> React Native</li>
+                        <li data-es="Dashboards en Tiempo Real" data-en="Real-time Dashboards">Dashboards en Tiempo Real</li>
+                    </ul>
+                </div>
+
+                <!-- Infra -->
+                <div class="glass-effect p-8 rounded-2xl hover:border-blue-400/50 transition group">
+                    <div class="w-14 h-14 bg-blue-400/10 rounded-lg flex items-center justify-center mb-6 text-blue-400 group-hover:bg-blue-400 group-hover:text-white transition">
+                        <i class="fas fa-cloud text-2xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-4" data-es="Backend en la Nube" data-en="Cloud Backend">Backend en la Nube</h4>
+                    <p class="text-gray-400 mb-4" data-es="Infraestructura escalable en AWS que crece automáticamente según la demanda de tu negocio." data-en="Scalable AWS infrastructure that grows automatically based on your business demand.">Infraestructura escalable en AWS que crece automáticamente según la demanda de tu negocio.</p>
+                    <ul class="text-sm space-y-2 text-gray-500">
+                        <li><i class="fas fa-check text-blue-400 mr-2"></i> Serverless (AWS Lambda)</li>
+                        <li data-es="Microservicios" data-en="Microservices">Microservicios</li>
+                        <li data-es="Bases de Datos SQL & NoSQL" data-en="SQL & NoSQL Databases">Bases de Datos SQL & NoSQL</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trayectoria -->
+    <section id="about" class="py-24">
+        <div class="container mx-auto px-6">
+            <div class="glass-effect rounded-3xl p-12 overflow-hidden relative">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h3 class="text-blue-400 font-bold mb-4 tracking-widest uppercase" data-es="Trayectoria" data-en="Profile">Trayectoria</h3>
+                        <h2 class="text-4xl font-bold mb-6" data-es="Experiencia en la que puedes confiar." data-en="Experience you can trust.">Experiencia en la que puedes confiar.</h2>
+                        <p class="text-gray-400 mb-6 leading-relaxed" data-es="Como Ingeniero Senior en compañías globales como Globant y Perficient, he diseñado sistemas críticos para bancos internacionales e integraciones de IA avanzada." data-en="As a Senior Engineer at global companies like Globant and Perficient, I've designed critical systems for international banks and advanced AI integrations.">
+                            Como Ingeniero Senior en compañías globales como <strong>Globant</strong> y <strong>Perficient</strong>, he diseñado sistemas críticos para bancos internacionales e integraciones de IA avanzada.
+                        </p>
+                        <div class="grid grid-cols-2 gap-6">
+                            <div>
+                                <h5 class="text-3xl font-bold text-white">8+</h5>
+                                <p class="text-sm text-gray-500" data-es="Años de Experiencia" data-en="Years Experience">Años de Experiencia</p>
+                            </div>
+                            <div>
+                                <h5 class="text-3xl font-bold text-white">C2</h5>
+                                <p class="text-sm text-gray-500" data-es="Nivel de Inglés" data-en="English Proficiency">Nivel de Inglés</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gray-900/50 p-8 rounded-2xl border border-gray-800">
+                        <h4 class="font-bold mb-6 flex items-center">
+                            <i class="fas fa-terminal mr-3 text-blue-500"></i> Tech Stack
+                        </h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-gray-800 px-3 py-1 rounded text-xs border border-gray-700">Node.js</span>
+                            <span class="bg-gray-800 px-3 py-1 rounded text-xs border border-gray-700">AWS Lambda</span>
+                            <span class="bg-gray-800 px-3 py-1 rounded text-xs border border-gray-700">React/Next.js</span>
+                            <span class="bg-gray-800 px-3 py-1 rounded text-xs border border-gray-700">Python</span>
+                            <span class="bg-gray-800 px-3 py-1 rounded text-xs border border-gray-700">Vector DB</span>
+                            <span class="bg-gray-800 px-3 py-1 rounded text-xs border border-gray-700">OpenAI</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contact" class="py-24 bg-[#0a0f1d]">
+        <div class="container mx-auto px-6 max-w-4xl text-center">
+            <h2 class="text-4xl font-bold mb-4" data-es="¿Listo para innovar?" data-en="Ready to innovate?">¿Listo para innovar?</h2>
+            <p class="text-gray-400 mb-12" data-es="Cuéntame sobre tu proyecto y asegura tu beneficio de lanzamiento." data-en="Tell me about your project and secure your launch benefit.">Cuéntame sobre tu proyecto y asegura tu beneficio de lanzamiento.</p>
+            
+            <form id="contactForm" class="text-left space-y-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-semibold mb-2 text-gray-300" data-es="Nombre Completo" data-en="Full Name">Nombre Completo</label>
+                        <input type="text" class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 transition">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold mb-2 text-gray-300" data-es="Correo Electrónico" data-en="Email Address">Correo Electrónico</label>
+                        <input type="email" class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 transition">
+                    </div>
+                </div>
+                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-lg transition shadow-lg shadow-blue-500/20" data-es="Solicitar Cotización y Descuento" data-en="Request Quote & Discount">
+                    Solicitar Cotización y Descuento
+                </button>
+            </form>
+            
+            <div class="mt-12 flex flex-col md:flex-row items-center justify-center gap-8 text-gray-400">
+                <a href="mailto:davidarbe@gmail.com" class="flex items-center hover:text-blue-400 transition">
+                    <i class="fas fa-envelope mr-3 text-blue-500"></i> davidarbe@gmail.com
+                </a>
+                <a href="https://www.linkedin.com/in/david-arbelaez-villamizar/" target="_blank" class="flex items-center hover:text-blue-400 transition">
+                    <i class="fab fa-linkedin mr-3 text-blue-500"></i> LinkedIn Profile
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-gray-800 text-center text-sm text-gray-500">
+        <p>© 2024 David Arbelaez Villamizar. Medellín, Colombia.</p>
+    </footer>
+
+    <script>
+        function changeLang(lang) {
+            const elements = document.querySelectorAll('[data-es]');
+            elements.forEach(el => {
+                el.innerText = el.getAttribute(`data-${lang}`);
+            });
+            
+            // Toggle active state for buttons
+            document.getElementById('btn-es').className = lang === 'es' ? 'font-bold text-white' : 'text-gray-500';
+            document.getElementById('btn-en').className = lang === 'en' ? 'font-bold text-white' : 'text-gray-500';
+            
+            // Update document lang
+            document.documentElement.lang = lang;
+        }
+
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const msg = document.documentElement.lang === 'es' ? '¡Gracias! Te contactaré pronto para aplicar tu descuento.' : 'Thank you! I will contact you soon to apply your discount.';
+            alert(msg);
+        });
+    </script>
+</body>
+</html>
+
+              
