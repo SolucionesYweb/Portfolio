@@ -26,9 +26,44 @@
         .hero-bg {
             background: radial-gradient(circle at top right, #1e3a8a, #0f172a);
         }
+        /* Estilos del botón de WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 15px rgba(0,0,0,0.3);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            padding: 12px 20px;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            background-color: #128c7e;
+            color: white;
+        }
+        .whatsapp-text {
+            font-size: 14px;
+            font-weight: bold;
+            font-family: 'Inter', sans-serif;
+        }
     </style>
 </head>
 <body class="bg-[#0f172a] text-gray-200">
+
+    <a href="https://wa.me/573173428750?text=Hola%20David,%20me%20gustaría%20obtener%20más%20información%20sobre%20tus%20servicios%20de%20IA." 
+       class="whatsapp-float" 
+       target="_blank">
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-text" data-es="Chatea conmigo" data-en="Chat with me">Chatea conmigo</span>
+    </a>
 
     <nav class="fixed w-full z-50 glass-effect py-4">
         <div class="container mx-auto px-6 flex justify-between items-center">
@@ -235,7 +270,6 @@
         }
 
         document.getElementById('contactForm').addEventListener('submit', function(e) {
-            // Nota: Este alert aparecerá justo antes de que el formulario se envíe a Formspree
             const msg = document.documentElement.lang === 'es' ? '¡Gracias! Te contactaré pronto para aplicar tu descuento.' : 'Thank you! I will contact you soon to apply your discount.';
             alert(msg);
         });
