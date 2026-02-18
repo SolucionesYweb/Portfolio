@@ -30,7 +30,6 @@
 </head>
 <body class="bg-[#0f172a] text-gray-200">
 
-    <!-- Navegación -->
     <nav class="fixed w-full z-50 glass-effect py-4">
         <div class="container mx-auto px-6 flex justify-between items-center">
             <div class="text-2xl font-bold gradient-text">DA.</div>
@@ -41,14 +40,13 @@
                 <a href="#contact" class="hover:text-blue-400 transition" data-en="Contact" data-es="Contacto">Contacto</a>
             </div>
             <div class="flex items-center space-x-2 border border-gray-600 px-3 py-1 rounded-full text-xs cursor-pointer">
-                <button onclick="changeLang('es')" id="btn-es" class="font-bold">ES</button>
+                <button onclick="changeLang('es')" id="btn-es" class="font-bold text-white">ES</button>
                 <span class="text-gray-600">|</span>
                 <button onclick="changeLang('en')" id="btn-en" class="text-gray-500">EN</button>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <header class="hero-bg min-h-screen flex items-center pt-20">
         <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
             <div>
@@ -77,7 +75,6 @@
         </div>
     </header>
 
-    <!-- Banner de Oferta -->
     <section id="offer" class="bg-gradient-to-r from-blue-900 to-purple-900 py-12 border-y border-white/10">
         <div class="container mx-auto px-6 text-center">
             <div class="inline-block bg-yellow-400 text-black px-4 py-1 rounded-full text-sm font-bold mb-4 uppercase" id="promo-badge" data-es="Oferta de Lanzamiento" data-en="Launch Offer">
@@ -92,7 +89,6 @@
         </div>
     </section>
 
-    <!-- Servicios -->
     <section id="services" class="py-24 bg-[#0a0f1d]">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
@@ -101,7 +97,6 @@
             </div>
             
             <div class="grid md:grid-cols-3 gap-8">
-                <!-- Chatbots -->
                 <div class="glass-effect p-8 rounded-2xl hover:border-blue-500/50 transition group">
                     <div class="w-14 h-14 bg-blue-500/10 rounded-lg flex items-center justify-center mb-6 text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition">
                         <i class="fas fa-robot text-2xl"></i>
@@ -115,7 +110,6 @@
                     </ul>
                 </div>
 
-                <!-- Web/App -->
                 <div class="glass-effect p-8 rounded-2xl hover:border-purple-500/50 transition group">
                     <div class="w-14 h-14 bg-purple-500/10 rounded-lg flex items-center justify-center mb-6 text-purple-400 group-hover:bg-purple-500 group-hover:text-white transition">
                         <i class="fas fa-mobile-alt text-2xl"></i>
@@ -129,7 +123,6 @@
                     </ul>
                 </div>
 
-                <!-- Infra -->
                 <div class="glass-effect p-8 rounded-2xl hover:border-blue-400/50 transition group">
                     <div class="w-14 h-14 bg-blue-400/10 rounded-lg flex items-center justify-center mb-6 text-blue-400 group-hover:bg-blue-400 group-hover:text-white transition">
                         <i class="fas fa-cloud text-2xl"></i>
@@ -146,7 +139,6 @@
         </div>
     </section>
 
-    <!-- Trayectoria -->
     <section id="about" class="py-24">
         <div class="container mx-auto px-6">
             <div class="glass-effect rounded-3xl p-12 overflow-hidden relative">
@@ -186,7 +178,6 @@
         </div>
     </section>
 
-    <!-- Contacto -->
     <section id="contact" class="py-24 bg-[#0a0f1d]">
         <div class="container mx-auto px-6 max-w-4xl text-center">
             <h2 class="text-4xl font-bold mb-4" data-es="¿Listo para innovar?" data-en="Ready to innovate?">¿Listo para innovar?</h2>
@@ -196,13 +187,18 @@
                 <div class="grid md:grid-cols-2 gap-6">
                     <div>
                         <label class="block text-sm font-semibold mb-2 text-gray-300" data-es="Nombre Completo" data-en="Full Name">Nombre Completo</label>
-                        <input type="text" class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 transition">
+                        <input type="text" name="name" required class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 transition">
                     </div>
                     <div>
                         <label class="block text-sm font-semibold mb-2 text-gray-300" data-es="Correo Electrónico" data-en="Email Address">Correo Electrónico</label>
-                        <input type="email" class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 transition">
+                        <input type="email" name="email" required class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 transition">
                     </div>
                 </div>
+                <div>
+                    <label class="block text-sm font-semibold mb-2 text-gray-300" data-es="Mensaje" data-en="Message">Mensaje</label>
+                    <textarea name="message" rows="4" required class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 transition"></textarea>
+                </div>
+                
                 <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-lg transition shadow-lg shadow-blue-500/20" data-es="Solicitar Cotización y Descuento" data-en="Request Quote & Discount">
                     Solicitar Cotización y Descuento
                 </button>
@@ -219,7 +215,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="py-12 border-t border-gray-800 text-center text-sm text-gray-500">
         <p>© 2024 David Arbelaez Villamizar. Medellín, Colombia.</p>
     </footer>
@@ -240,11 +235,10 @@
         }
 
         document.getElementById('contactForm').addEventListener('submit', function(e) {
+            // Nota: Este alert aparecerá justo antes de que el formulario se envíe a Formspree
             const msg = document.documentElement.lang === 'es' ? '¡Gracias! Te contactaré pronto para aplicar tu descuento.' : 'Thank you! I will contact you soon to apply your discount.';
             alert(msg);
         });
     </script>
 </body>
 </html>
-
-              
